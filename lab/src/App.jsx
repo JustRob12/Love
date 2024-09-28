@@ -6,10 +6,12 @@ import './index.css';
 function App() {
   return (
     <div>
-      <Flower/> {/* Ensure the path starts with / */}
+      <Flowers />
     </div>
   );
 }
+
+export default App;
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
