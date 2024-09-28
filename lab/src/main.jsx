@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import Flower from './Flower.jsx';
 import './index.css';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import * as serviceWorkerRegistration from '/service-worker.js'; // Import the service worker registration
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <StrictMode>
+    <Flower />
+  </StrictMode>
 );
 
-// Register the service worker
+// Register the service worker  
 serviceWorkerRegistration.register();

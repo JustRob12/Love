@@ -1,6 +1,5 @@
 // App.jsx
 import React from 'react';
-import { Flower } from './Flower';
 import './index.css';
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
   );
 }
 
-export default App;
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
