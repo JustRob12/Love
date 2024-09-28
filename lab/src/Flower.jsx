@@ -111,6 +111,11 @@ const Flower = () => {
             ></div>
           ))}
       </div>
+
+      {/* Add the text here */}
+      <div className="message">
+        I Love You Always, in All Ways Bum Bum
+      </div>
     </main>
   );
 };
