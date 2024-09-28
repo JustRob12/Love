@@ -1,21 +1,21 @@
 {
-    "short_name": "Flower",
-    "name": "BumBum",
-    "icons": [
-      {
-        "src": "/src/assets/192fl.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/src/assets/512fl.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#ff6347",
-    "background_color": "#ffffff"
-  }
-  
+  "short_name": "FlowerApp",
+  "name": "Flower Animation App",
+  "icons": [
+    {
+      "src": "src/assets/192fl.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "src/assets/512fl.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff4081",
+  "description": "A beautiful flower animation app."
+}
