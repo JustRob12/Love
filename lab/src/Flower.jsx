@@ -76,11 +76,11 @@ const Flower = () => {
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className="wrappers">
       <div className="flower"></div>
       {/* Message below the flower */}
       <div className="message">
-        <h2>Happy Girlfriends Day Bum Bum</h2>
+        <h2>Happy Girlfriends Day Bum Bum, I Love You</h2>
     
       </div>
     </div>
