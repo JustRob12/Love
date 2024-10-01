@@ -127,12 +127,12 @@ body {
 
 /* Message below the flower */
 .message {
-  text-align: left; /* Align message text to the left */
+  text-align: center; /* Align message text to the left */
   color: white;
   margin-top: 10%; /* Adds space between the flower and the message */
   position: absolute; /* Position it absolutely */
-  bottom: 500%; /* Position it 10% from the bottom of the viewport */
-  left: 10%; /* Adjust this for horizontal positioning */
+  top: 500%; /* Position it 10% from the bottom of the viewport */
+  /* Adjust this for horizontal positioning */
 }
 
 .message h2 {
