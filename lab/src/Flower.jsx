@@ -91,7 +91,7 @@ const Flower = () => {
         <div className="ring"></div>
       </div>
       {/* Message below the lines */}
-      <p className="flower-message">Goodluck Bumbum.<br />I Love You Always, In All Ways.<br />Proud ko sa imo permi Muwah</p>
+      <p className="flower-message">Goodluck Bumbum.<br />I Love You Always, In All Ways.<br />Happy Girlfriends Day BumBum</p>
     </main>
   );
 };
