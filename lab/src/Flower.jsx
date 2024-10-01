@@ -1,99 +1,90 @@
-import { gsap } from 'gsap';
 import React, { useEffect } from 'react';
 import './Flower.css'; // Import the CSS file
 
 const Flower = () => {
   useEffect(() => {
-    const segmR = Array.from(document.getElementsByClassName("segmR"));
-    segmR.forEach((segm, i) => {
-      let deg = 30 * i;
-      segm.style.transform = "rotate(" + deg + "deg)";
-      segm.style.transformOrigin = "bottom left";
-    });
+    const flower = document.querySelector(".flower");
 
-    const segmL = Array.from(document.getElementsByClassName("segmL"));
-    segmL.forEach((segm, i) => {
-      let deg = -30 * (i + 1);
-      segm.style.transform = "rotate(" + deg + "deg)";
-      segm.style.transformOrigin = "bottom left";
-    });
+    const petalPartMarkup =
+      '<div class="box"><div class="shape"></div></div>';
 
-    const rings = Array.from(document.getElementsByClassName("ring"));
-    rings.forEach((ring, i) => {
-      ring.style.width = 200 - 50 * i + "px";
-      ring.style.height = 40 - 10 * i + "px";
-      ring.style.margin = 10 - 10 * i + "px";
-    });
+    const maxParts = 20;
+    const maxPetalsDef = 6;
+    const maxPetals = maxPetalsDef;
 
-    const tl1 = gsap.timeline({
-      repeat: -1,
-      yoyo: true,
-    });
+    const partsFontStepDef = 15 / maxParts; // Reduced font size step for smaller flower
+    const partsFontStep = partsFontStepDef;
+    const huetStep = 150 / maxParts;
 
-    const tl2 = gsap.timeline({
-      repeat: -1,
-      yoyo: true,
-    });
+    createFlower();
 
-    tl1
-      .to(".segmR", {
-        scale: 0.5,
-        rotate: 0,
-        mixBlendMode: "darken",
-        duration: 4,
-        ease: "sine.inOut",
-      })
-      .to(
-        ".corolla",
-        {
-          xPercent: -49,
-          yPercent: 49,
-          duration: 4,
-          ease: "sine.inOut",
-        },
-        "<"
-      );
+    function createFlower() {
+      const angle = 360 / maxPetals;
 
-    tl2
-      .to(".segmL", {
-        scale: 0.5,
-        rotate: 0,
-        mixBlendMode: "darken",
-        duration: 4,
-        ease: "sine.inOut",
-      })
-      .to(
-        ".corolla",
-        {
-          xPercent: -49,
-          yPercent: 49,
-          duration: 4,
-          ease: "sine.inOut",
-        },
-        "<"
-      );
+      for (let i = 0; i < maxPetals; i++) {
+        const petal = createPetal();
+        const currAngle = angle * i + "deg";
+        const transform = `transform: rotateY(${currAngle}) rotateX(-30deg) translateZ(5vmin)`; // Reduced translateZ for smaller size
+
+        petal.setAttribute("style", transform);
+        flower.appendChild(petal);
+      }
+    }
+
+    function createPetal() {
+      let box = createBox(null, 0);
+
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+
+      for (let i = 1; i <= maxParts; i++) {
+        const newBox = createBox(box, i);
+        box = newBox;
+      }
+
+      petal.appendChild(box);
+      return petal;
+    }
+
+    function createBox(box, pos) {
+      let fontSize = partsFontStep * (maxParts - pos) + "vmin"; // Adjusted font size for smaller petals
+      const half = maxParts / 2;
+      let bright = "50";
+
+      if (pos < half + 1) {
+        fontSize = partsFontStep * pos + "vmin";
+      } else {
+        bright = 10 + (40 / half) * (maxParts - pos);
+      }
+
+      const color = `hsl(${huetStep * pos}, 100%, ${bright}%)`;
+
+      const newShape = document.createElement("div");
+      newShape.classList.add("shape");
+
+      const newBox = document.createElement("div");
+      newBox.classList.add("box");
+      newBox.setAttribute("style", `color: ${color}; font-size: ${fontSize}`);
+
+      if (box) {
+        newBox.appendChild(box);
+      }
+
+      newBox.appendChild(newShape);
+      return newBox;
+    }
   }, []);
 
   return (
-    <main>
-      <div className="corolla">
-        <div className="segmL"></div>
-        <div className="segmR"></div>
-        <div className="segmR"></div>
-        <div className="segmR"></div>
-        <div className="segmR"></div>
-        <div className="segmL"></div>
-        <div className="segmL"></div>
+    <div className="wrapper">
+      <div className="flower"></div>
+      {/* Message below the flower */}
+      <div className="message">
+        <h2>Happy Girlfriends Day Bum Bum</h2>
+    
       </div>
-      <div className="rings">
-        <div className="ring"></div>
-        <div className="ring"></div>
-        <div className="ring"></div>
-      </div>
-      {/* Message below the lines */}
-      <p className="flower-message">Goodluck Bumbum.<br />I Love You Always, In All Ways.<br />Happy Girlfriends Day BumBum</p>
-    </main>
+    </div>
   );
 };
 
-export default Flower;  
+export default Flower;
