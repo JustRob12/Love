@@ -125,18 +125,24 @@ body {
   transform-style: preserve-3d;
 }
 
-/* Message below the flower */
+/* Message in front of the flower */
 .message {
-  text-align: center; /* Align message text to the left */
+  text-align: center; /* Center the message text */
   color: white;
-  margin-top: 10%; /* Adds space between the flower and the message */
   position: absolute; /* Position it absolutely */
-  top: 500%; /* Position it 10% from the bottom of the viewport */
-  /* Adjust this for horizontal positioning */
+  top: 150px;; /* Position it at the bottom of the wrapper */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Offset to truly center */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
+  padding: 1rem; /* Add some padding around the text */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
 }
 
 .message h2 {
-  font-size: 2rem; /* Adjust font size as needed */
+  font-size: 1.5rem; /* Adjust font size for header */
 }
 
-
+.message p {
+  font-size: 1rem; /* Adjust font size for paragraph */
+}
