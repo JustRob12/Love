@@ -80,7 +80,7 @@ const Flower = () => {
       <div className="flower"></div>
       {/* Message below the flower */}
       <div className="message">
-        <h2>Happy Girlfriends Day Bum Bum, I Love You</h2>
+        <h2>Happy Girlfriends Day Bum Bum, I Love You Always, In All Ways</h2>
     
       </div>
     </div>
