@@ -12,7 +12,7 @@ const Flower = () => {
     const maxPetalsDef = 6;
     const maxPetals = maxPetalsDef;
 
-    const partsFontStepDef = 15 / maxParts; // Reduced font size step for smaller flower
+    const partsFontStepDef = 20 / maxParts; // Reduced font size step for smaller flower
     const partsFontStep = partsFontStepDef;
     const huetStep = 150 / maxParts;
 
