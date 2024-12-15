@@ -89,7 +89,7 @@ const Flower = () => {
       <div className="message-overlay">
         <div className="message-line">Goodluck sa Exam Palangga</div>
         <div className="message-line">Kaya nato niiii</div>
-        <div className="message-line">I love you ❤️</div>
+        <div className="message-line">I love you Always, in All Ways ❤️</div>
       </div>
     </>
   );
