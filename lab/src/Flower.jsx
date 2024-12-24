@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Flower.css';
 
 const Flower = () => {
+  const [showLoveMessage, setShowLoveMessage] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  const handleBoxClick = () => {
+    setShowButton(true);
+  };
+
+  const handleLoveClick = () => {
+    setShowLoveMessage(true);
+  };
+
   return (
-    <div className='fullGroup'>
+    <div className='fullGroup' onClick={handleBoxClick}>
       <div className='boxGroup'>
         <div className='boxFace face1'></div>
         <div className='boxFace face1 in1'></div>
@@ -56,6 +67,36 @@ const Flower = () => {
       <div className='text text1'> Click Me </div>
       <div className='text text2'> Merry Christmas! </div>
       <div className='text text3'> I love you Bum bum ❤️ </div>
+      
+      {showButton && (
+        <button className="love-button" onClick={(e) => {
+          e.stopPropagation();
+          handleLoveClick();
+        }}>
+          Click for a special message ❤️
+        </button>
+      )}
+      
+      {showLoveMessage && (
+        <div className="love-message">
+          My dearest Bum Bummm,
+          <br /><br />
+          As we celebrate this magical Christmas together, I want you to know that you are the greatest gift I could ever ask for bum bum. 
+          <br /><br />
+          You make my heart smile, and I cherish every second we spend together. You're my best friend, my soulmate, and my everything.
+          <br /><br />
+          Kabalo ko na Pabadlong ko palangga, and im very sorry tanan sa nabuhat nako na mali karong tuiga, maningkamot ko to be your best MAN. Handtud-hantud nani langga. Ikaw lang jud ako, wala nay lain. Ikaw ang GIFT sa ako sa GINOO
+          <br /><br />
+          I will be your forever Bum Bum. I will always be your Bum Bum. We will do our best to be together forever. Naa na sa imo ang tanan tanan pa. Di najud taka buy-an palangga. Ikaw and the best sa akoo and ako ang the best sa imooooo. I will be always by your side bum bum no matter what happens
+          <br /><br />
+          Merry Christmas, My Pretty Bum Bum!
+          
+          <br />
+          Forever yours Roberto M. Prisoris Jr.
+          <br /><br />
+          I Love You Always, In All Ways❤️
+        </div>
+      )}
     </div>
   );
 };
