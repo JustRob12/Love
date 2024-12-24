@@ -53,7 +53,7 @@ const Flower = () => {
         <div className='star star6'></div>
         <div className='star star7'></div>
       </div>
-      <div className='text text1'> Hover Me </div>
+      <div className='text text1'> Click Me </div>
       <div className='text text2'> Merry Christmas! </div>
       <div className='text text3'> I love you Bum bum ❤️ </div>
     </div>
