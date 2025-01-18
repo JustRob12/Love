@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Flower from './Flower.jsx'
+import Cake from './Cake.jsx'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Flower />
+    <Cake />
   </StrictMode>,
 )
